@@ -15,10 +15,10 @@ class MFLFusionEngine:
         Initializes the fusion engine with probabilistic model weights and fault mappings.
         """
         self.single_model = SingleMFLNet()
-        self.single_model.load_state_dict(torch.load(single_model_path))
+        self.single_model.load_state_dict(torch.load(single_model_path, map_location="cpu", weights_only=True))
 
         self.multi_model = MultiMFLNet()
-        self.multi_model.load_state_dict(torch.load(multi_model_path))
+        self.multi_model.load_state_dict(torch.load(multi_model_path, map_location="cpu", weights_only=True))
 
         self.fault_mapping = {0: "King", 1: "Inner", 2: "Outer"}
 
