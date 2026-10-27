@@ -55,7 +55,7 @@ If you want to use our pre-prepared models, train the probabilistic 1D-CNN netwo
 
 If you find this code useful in your research or applications, please consider citing our paper:
 
-> **Aldaghi, M., Mohammadi, S., & Mollazadeh Ghomi, M. (2026).** *A Physics-Informed Deep Learning Fusion Engine for Magnetic Flux Leakage Signal Analysis in Wire Ropes.* ISAV 2026 (iranian Society of  Acoustics and Vibration).
+> **Aldaghi, M., Mohammadi, S., & Mollazadeh Ghomi, M. (2026).** *A Physics-Informed Deep Learning Fusion Engine for Magnetic Flux Leakage Signal Analysis in Wire Ropes.* ISAV 2026 (Iranian Society of  Acoustics and Vibration).
 
 ---
 **⚠️ Note on Fault Classes (King Wire):** 
