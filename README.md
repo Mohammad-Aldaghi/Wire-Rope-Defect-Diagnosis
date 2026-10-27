@@ -50,4 +50,13 @@ If you want to use our pre-prepared models, train the probabilistic 1D-CNN netwo
 *(This notebook handles the entire pipeline: training, weight saving, running the Fusion Engine, and plotting the evaluation metrics).*
 
 ---
-**Note:** The models in this repository are strictly optimized for standard hauling ropes (Inner and Outer breaks). Track-rope specific faults (e.g., King wire breaks) have been filtered out of this version.
+
+## 📄 Citation
+
+If you find this code useful in your research or applications, please consider citing our paper:
+
+> **Aldaghi, M., Mohammadi, S., & Mollazadeh Ghomi, M. (2026).** *A Physics-Informed Deep Learning Fusion Engine for Magnetic Flux Leakage Signal Analysis in Wire Ropes.* ISAV 2026 (International Conference on Acoustics and Vibration).
+
+---
+**⚠️ Note on Fault Classes (King Wire):** 
+The results and confusion matrix presented in this repository and our corresponding paper are specifically filtered for standard hauling ropes (Inner and Outer breaks). However, the core 1D-CNN architectures and Fusion Engine were fundamentally designed and trained to include **King wire (core)** breaks as well. You can easily enable and evaluate the King wire predictions by modifying the class filters in the evaluation scripts/notebooks.
