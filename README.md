@@ -19,13 +19,6 @@ By leveraging two isolated **1D-CNNs** and a **Variance-based Fusion Engine**, t
 
 ## 📊 Architecture & Results
 
-<!-- 
-Image Upload Guide:
-1. Create a folder named `docs` in your GitHub repository.
-2. Upload your flowchart as `flowchart.png` and your 4x4 matrix as `confusion_matrix.png` inside the `docs` folder.
-3. The images will automatically render below once uploaded!
--->
-
 ![Flowchart](docs/flowchart.png)
 *Project Flowchart: From physics-informed dataset generation to uncertainty-aware fusion.*
 
@@ -39,30 +32,22 @@ Image Upload Guide:
 Follow these instructions to set up and run the project on your local machine.
 
 ### 1. Prerequisites
-Ensure Python is installed, then install the required dependencies:
+Ensure Python and Jupyter Notebook are installed, then install the required dependencies:
 ```bash
-pip install torch numpy pandas scikit-learn matplotlib seaborn
+pip install torch numpy pandas scikit-learn matplotlib seaborn jupyter
 ```
 
 ### 2. Dataset Generation
-Due to storage constraints, the large synthetic dataset is not included in this repository. Generate the physical Single and Multi-break data by running:
-```bash
-python src/dataset_generator.py
-```
-*(Generated `.npz` files will be saved in the designated data directory).*
+Due to storage constraints, the large synthetic dataset is not included in this repository. If you want to generate the physical Single and Multi-break data from scratch, open and run the following Jupyter Notebook:
+* `generate_dataset.ipynb`
 
-### 3. Model Training
-To train the probabilistic 1D-CNN models from scratch, run:
-```bash
-python src/train_model.py
-```
-*(Trained weights will be saved as `.pth` files).*
+*(Generated `.npz` files will be automatically saved in the designated data directory).*
 
-### 4. Evaluation & Fusion Engine
-To evaluate the Fusion Engine, plot the 4x4 confusion matrix, and view the Top-3 probabilistic predictions, execute:
-```bash
-python src/evaluator.py
-```
+### 3. Model Training & Evaluation
+If you want to use our pre-prepared models, train the probabilistic 1D-CNN networks from scratch, or evaluate the Fusion Engine's performance, open and run:
+* `train_model.ipynb`
+
+*(This notebook handles the entire pipeline: training, weight saving, running the Fusion Engine, and plotting the evaluation metrics).*
 
 ---
 **Note:** The models in this repository are strictly optimized for standard hauling ropes (Inner and Outer breaks). Track-rope specific faults (e.g., King wire breaks) have been filtered out of this version.
