@@ -644,8 +644,10 @@ class ComprehensiveFusionEvaluator:
 
         y_pred = np.argmax(self.y_prob, axis=1)
 
-        # Compute confusion matrix strictly for the 4 classes (indices 0, 1, 2, 3)
-        cm = confusion_matrix(self.y_true, y_pred, labels=[0, 1, 2, 3])
+        keep = [1, 2, 4, 5]   # Single-Inner, Single-Outer, Multi-Inner, Multi-Outer
+        y_true = np.array(self.y_true); y_pred = np.argmax(self.y_prob, axis=1)
+        mask = np.isin(y_true, keep)
+        cm = confusion_matrix(y_true[mask], y_pred[mask], labels=keep)
 
         plt.figure(figsize=(8, 6))
         sns.heatmap(
